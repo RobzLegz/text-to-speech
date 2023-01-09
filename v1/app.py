@@ -1,11 +1,10 @@
 from pydub import AudioSegment
 from scripts.label_sound import label_sounds, work_dir
 from pydub.effects import speedup
-from pydub.playback import play
 
 labeled_sounds = label_sounds()
 
-text = "ābols"
+text = input("Enter text in latvian: ")
 
 split_text = [*text]
 
@@ -62,7 +61,7 @@ def optimal_name():
 
 opt_name = optimal_name()
 
-sped_up_sound = speedup(full_sound, 1.2, 150)
+sped_up_sound = speedup(full_sound, 1.01, 150)
 
 output_file = f"{work_dir}\output\{opt_name}.mp3"
 
